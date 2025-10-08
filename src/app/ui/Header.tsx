@@ -3,7 +3,6 @@ import React from 'react';
 import { Typography, AppBar, Toolbar } from '@mui/material';
 import Box from '@mui/system/Box';
 import theme from './theme';
-import { amber } from '@mui/material/colors';
 import Grid from '@mui/material/GridLegacy';
 import { appConfig } from './../data/staticData.js';
 
@@ -11,13 +10,16 @@ export default function Header() {
   return (
     <>
       <AppBar>
-        <Toolbar disableGutters sx={{ m: 1 }}>
-          <Grid item>
+        <Toolbar disableGutters>
+          <Grid item p={1}>
             <Typography
               variant="h6"
               sx={{
-                color: amber[500],
+                color: theme.palette.common.white,
                 fontFamily: 'monospace',
+                background:
+                  'radial-gradient(  hsla(240, 8%, 5%, 0.40) 0%,rgba(64,150,238,1) 100%)',
+                borderRadius: 1,
               }}
             >
               {appConfig.appName}
@@ -25,7 +27,7 @@ export default function Header() {
           </Grid>
         </Toolbar>
       </AppBar>
-      <Box sx={{ ...theme.mixins.toolbar }}></Box>
+      <Toolbar />
     </>
   );
 }
