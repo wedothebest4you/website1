@@ -1,16 +1,6 @@
 'use client';
 import { createTheme } from '@mui/material/styles';
-
-import { Roboto, Pacifico, Raleway } from 'next/font/google';
-
-const roboto = Roboto({ subsets: ['latin'], variable: '--font-roboto' });
-
-const pacifico = Pacifico({
-  weight: '400',
-  subsets: ['latin'],
-  variable: '--font-pacifico',
-});
-const raleway = Raleway({ subsets: ['latin'], variable: '--font-raleway' });
+import { roboto, raleway, pacifico } from '../font';
 
 declare module '@mui/material/styles' {
   interface CommonColors {
@@ -35,6 +25,7 @@ const theme = createTheme({
       main: `${arcOrange}`,
     },
   },
+
   typography: {
     fontFamily: [
       roboto.style.fontFamily,
@@ -43,6 +34,17 @@ const theme = createTheme({
     ].join(','),
     h3: {
       fontWeight: 300,
+    },
+  },
+  components: {
+    MuiTab: {
+      styleOverrides: {
+        root: {
+          textTransform: 'none',
+          fontFamily: 'RaleWay',
+          fontSize: '1rem',
+        },
+      },
     },
   },
 });

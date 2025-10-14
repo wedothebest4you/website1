@@ -3,16 +3,7 @@ import Header from './ui/Header';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
 import theme from './ui/theme';
 import { ThemeProvider } from '@mui/material/styles';
-import { Roboto, Pacifico, Raleway } from 'next/font/google';
-
-const roboto = Roboto({ subsets: ['latin'], variable: '--font-roboto' });
-
-const pacifico = Pacifico({
-  weight: '400',
-  subsets: ['latin'],
-  variable: '--font-pacifico',
-});
-const raleway = Raleway({ subsets: ['latin'], variable: '--font-raleway' });
+import { roboto, raleway, pacifico } from './font';
 
 export default function RootLayout({
   children,
